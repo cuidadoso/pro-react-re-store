@@ -2,20 +2,7 @@ const initialState = {
   books: [],
   loading: true,
   error: null,
-  cartItems: [
-    {
-      id: 0,
-      name: "Name 0",
-      count: 2,
-      total: 2
-    },
-    {
-      id: 1,
-      name: "Name 1",
-      count: 3,
-      total: 1
-    }
-  ],
+  cartItems: [],
   orderTotal: 220
 };
 
