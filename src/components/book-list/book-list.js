@@ -1,19 +1,19 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-import { withBookstoreService } from "../hoc";
-import BookListItem from "../book-list-item";
-import { fetchBooks, bookAddedToCart } from "../../actions";
-import { compose } from "../../utils";
-import Spinner from "../spinner";
-import ErrorIndicator from "../error-indicator";
+import { withBookstoreService } from '../hoc';
+import BookListItem from '../book-list-item';
+import { fetchBooks, bookAddedToCart } from '../../actions';
+import { compose } from '../../utils';
+import Spinner from '../spinner';
+import ErrorIndicator from '../error-indicator';
 
-import "./book-list.css";
+import './book-list.css';
 
 const BookList = ({ books, onAddedToCart }) => {
   return (
     <ul>
-      {books.map(book => {
+      {books.map((book) => {
         return (
           <li key={book.id}>
             <BookListItem
@@ -53,7 +53,7 @@ const mapStateToProps = ({ books, loading, error }) => {
 const mapDispatchToProps = (dispatch, { bookstoreService }) => {
   return {
     fetchBooks: fetchBooks(bookstoreService, dispatch),
-    onAddedToCart: id => dispatch(bookAddedToCart(id))
+    onAddedToCart: (id) => dispatch(bookAddedToCart(id))
   };
 };
 
